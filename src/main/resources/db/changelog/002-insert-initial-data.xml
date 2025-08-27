@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+
+    <changeSet id="002-insert-initial-valve-data" author="frederickgaens">
+        <!-- Cooling valves -->
+        <insert tableName="output">
+            <column name="id" value="zk_co"/>
+            <column name="name" value="zk"/>
+            <column name="address" value="22"/>
+            <column name="operationmode" value="COOLING"/>
+            <column name="outputtype" value="VALVE"/>
+        </insert>
+        <insert tableName="output">
+            <column name="id" value="bk_co"/>
+            <column name="name" value="bk"/>
+            <column name="address" value="20"/>
+            <column name="operationmode" value="COOLING"/>
+            <column name="outputtype" value="VALVE"/>
+        </insert>
+        <insert tableName="output">
+            <column name="id" value="lk_co"/>
+            <column name="name" value="lk"/>
+            <column name="address" value="18"/>
+            <column name="operationmode" value="COOLING"/>
+            <column name="outputtype" value="VALVE"/>
+        </insert>
+        <insert tableName="output">
+            <column name="id" value="kk_co"/>
+            <column name="name" value="kk"/>
+            <column name="address" value="16"/>
+            <column name="operationmode" value="COOLING"/>
+            <column name="outputtype" value="VALVE"/>
+        </insert>
+        <insert tableName="output">
+            <column name="id" value="mb_co"/>
+            <column name="name" value="mb"/>
+            <column name="address" value="14"/>
+            <column name="operationmode" value="COOLING"/>
+            <column name="outputtype" value="VALVE"/>
+        </insert>
+
+        <!-- Heating valves -->
+        <insert tableName="output">
+            <column name="id" value="zk_heat"/>
+            <column name="name" value="zk"/>
+            <column name="address" value="12"/>
+            <column name="operationmode" value="HEATING"/>
+            <column name="outputtype" value="VALVE"/>
+        </insert>
+        <insert tableName="output">
+            <column name="id" value="bk_heat"/>
+            <column name="name" value="bk"/>
+            <column name="address" value="10"/>
+            <column name="operationmode" value="HEATING"/>
+            <column name="outputtype" value="VALVE"/>
+        </insert>
+        <insert tableName="output">
+            <column name="id" value="lk_heat"/>
+            <column name="name" value="lk"/>
+            <column name="address" value="17"/>
+            <column name="operationmode" value="HEATING"/>
+            <column name="outputtype" value="VALVE"/>
+        </insert>
+        <insert tableName="output">
+            <column name="id" value="kk_heat"/>
+            <column name="name" value="kk"/>
+            <column name="address" value="23"/>
+            <column name="operationmode" value="HEATING"/>
+            <column name="outputtype" value="VALVE"/>
+        </insert>
+        <insert tableName="output">
+            <column name="id" value="mb_heat"/>
+            <column name="name" value="mb"/>
+            <column name="address" value="21"/>
+            <column name="operationmode" value="HEATING"/>
+            <column name="outputtype" value="VALVE"/>
+        </insert>
+
+        <!-- Pumps -->
+        <insert tableName="output">
+            <column name="id" value="cool_pmp"/>
+            <column name="name" value="Cooling pump"/>
+            <column name="address" value="8"/>
+            <column name="operationmode" value="COOLING"/>
+            <column name="outputtype" value="PUMP"/>
+        </insert>
+        <insert tableName="output">
+            <column name="id" value="heat_pump"/>
+            <column name="name" value="Heating pump"/>
+            <column name="address" value="19"/>
+            <column name="operationmode" value="HEATING"/>
+            <column name="outputtype" value="PUMP"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,66 @@
+plugins {
+    id 'java'
+    id 'io.quarkus'
+}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+ext {
+    pi4jVersion = '3.0.2'
+}
+
+dependencies {
+    implementation 'io.quarkus:quarkus-container-image-jib'
+    implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
+    implementation "io.quarkus:quarkus-arc"
+    implementation "io.quarkus:quarkus-rest"
+    implementation "io.quarkus:quarkus-hibernate-orm-panache"
+    implementation "io.quarkus:quarkus-liquibase"
+    implementation "io.quarkus:quarkus-jdbc-h2"
+    implementation "io.quarkus:quarkus-elytron-security-properties-file"
+    testImplementation "io.quarkus:quarkus-junit5"
+
+    /*
+        Pi4J
+     */
+    implementation "com.pi4j:pi4j-core:${pi4jVersion}"
+    implementation "com.pi4j:pi4j-plugin-raspberrypi:3.0.2"
+
+    /*
+        AssertJ
+     */
+    implementation "org.assertj:assertj-core:4.0.0-M1"
+
+    /*
+        Jackson
+     */
+    implementation "io.quarkus:quarkus-rest-jackson:3.25.3"
+
+    /*
+        RestAssured
+     */
+    testImplementation "io.rest-assured:rest-assured:5.5.6"
+}
+
+group = 'be.codesolutions.domopi'
+version = '1.0.0-SNAPSHOT'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_24
+    targetCompatibility = JavaVersion.VERSION_24
+}
+
+test {
+    systemProperty "java.util.logging.manager", "org.jboss.logmanager.LogManager"
+}
+compileJava {
+    options.encoding = 'UTF-8'
+    options.compilerArgs << '-parameters'
+}
+
+compileTestJava {
+    options.encoding = 'UTF-8'
+}

@@ -1,0 +1,8 @@
+### Update valve to LOW state (authenticated user)
+PUT {{host}}/api/valves/zk_co
+Authorization: Basic {{user1}} {{user1_password}}
+Content-Type: application/json
+
+{
+  "state": "LOW"
+}
